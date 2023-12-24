@@ -155,9 +155,28 @@ using System;
 using System.Dynamic;
 using JavaScript;
 using NUnit.Framework;
+using JavaScript;
 
 
 Console.WriteLine("Version: {0}", Environment.Version.ToString());
+
+{
+    var engine = ClearScript.CreateEngine();
+    var obj = Lang.FromJson("""
+        { a: 123 }
+        """);
+    engine.Global.SetProperty("obj", obj);
+    engine.Evaluate("""
+        $print(obj);
+        obj.a++;
+        $print(obj);
+        $print(obj.a);
+        $print(obj.Get("a"));
+        $print($toJson(obj));
+        """);
+    Lang.Print(Lang.FullName(obj.a));
+    Lang.Print(Lang.FullName(obj));
+}
 
 {
     Lang.Print("Sample(A)");
@@ -183,6 +202,7 @@ Console.WriteLine("Version: {0}", Environment.Version.ToString());
     Lang.Print(result.Get("!"), "!");
     Lang.Print(result.ContainsKey("!"), "!");
 }
+Environment.Exit(0);
 
 {
     Lang.Print("Sample(B)");
