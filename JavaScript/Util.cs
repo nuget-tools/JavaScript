@@ -20,15 +20,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Dynamic;
-using System.Security.Cryptography;
-
-//using Formatting = Newtonsoft.Json.Formatting;
 
 namespace JavaScript;
 
-/** @brief MyClass does something
- * @details I have something more long winded to say about it.  See example 
- * in test.cs: @include test.cs */
 internal class Util
 {
     static Util()

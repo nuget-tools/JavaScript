@@ -1,5 +1,5 @@
 ﻿using GScript;
-using System.Dynamic;
+//using System.Dynamic;
 using System.Reflection;
 
 namespace JavaScript;
@@ -45,6 +45,7 @@ var log = _console.log;
     }
     public static dynamic? FromObject(dynamic? x)
     {
+        x = Util.Copy(x);
         x = Util.FromObject(x);
         x = Util.FromNewton(x);
         return x;

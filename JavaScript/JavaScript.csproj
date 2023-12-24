@@ -43,6 +43,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Utf8Json" Version="1.3.7" />
     <PackageReference Include="GScript" Version="3.0.0.2057" />
+    <PackageReference Include="Microsoft.ClearScript.Complete" Version="7.4.4" />
   </ItemGroup>
   <ItemGroup>
     <None Include="../README.md" Pack="true" PackagePath="" />
